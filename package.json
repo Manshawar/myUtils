@@ -1,0 +1,35 @@
+{
+  "name": "yhr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "commandName": "yhr",
+  "bin": {
+    "yhr": "lib/bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "files": [
+    "lib"
+  ],
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.14.0",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "tsup": "^8.5.0"
+  },
+  "dependencies": {
+    "commander": "^14.0.0",
+    "module-alias": "^2.2.3",
+    "typescript": "^5.9.2"
+  },
+  "_moduleAliases": {
+    "@": "./src/bin/"
+  }
+}
