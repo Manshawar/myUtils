@@ -8,47 +8,18 @@ const packageConfig = (await import("../../package.json")).default
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 alias(path.resolve(__dirname, "../../"));
+import optionsConfig from './command/options/index'
 const program = new Command(packageConfig.commandName);
+import commandConfig from './command/index.ts';
+export interface IOption {
+  command: string
+  value: ((value?: any) => string) | string
+}
 export interface ICommand {
   description: string
   command: string
   action: (value?: any) => void
 }
-export interface IOption {
-  command: string
-  value: ((value?: any) => string) | string
-}
-export const commandConfig: ICommand[] = [
-  {
-    description: 'test',
-    command: 'test',
-    action: () => {
-      console.log('test');
-    }
-  },
-  {
-    description: 'version',
-    command: 'v',
-    action: () => {
-      console.log(packageConfig.version);
-    }
-  },
-  {
-    description: 'gerrit push ',
-    command: 'grp',
-    action: () => {
-      // console.log('gerrit push ');
-    }
-  }
-]
-const optionsConfig: IOption[] = [
-  {
-    command: '-a',
-    value: (value) => {
-      return packageConfig.version;
-    }
-  }
-]
 const initOptions = (commandConfig: IOption[]) => {
   commandConfig.forEach(config => {
     const { command, value } = config

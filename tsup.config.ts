@@ -8,4 +8,5 @@ export default defineConfig({
   dts: true,
   format: 'esm',
   outDir: 'lib/bin',
+  external: ['simple-git']
 })
