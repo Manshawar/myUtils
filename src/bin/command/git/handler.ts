@@ -46,8 +46,8 @@ export const getCommitHandler: ICommand = new Command(
     try {
       console.log('提交代码:', message);
       const res = message?.split(':');
-      console.log('res', commitHead[res?.[0] as string], res?.[1]);
-      const messageText = commitHead[res?.[0] as string] + res?.[1];
+      console.log(commitHead[res?.[0] as string], res?.[1]);
+      const messageText = commitHead[res?.[0] as string]+' ' + res?.[1];
       await commit(messageText || '');
     } catch (error) {
       console.error('提交代码失败:', error);
