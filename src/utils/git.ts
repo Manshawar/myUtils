@@ -20,3 +20,9 @@ export const checkBranch = async (branch: string) => {
   console.log('currentBranch', currentBranch.current);
   return currentBranch.current;
 }
+export const add = async () => {
+  await gitInstance.add('.');
+}
+export const commit = async (message: string) => {
+  await gitInstance.commit(message);
+}

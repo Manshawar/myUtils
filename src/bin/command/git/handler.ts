@@ -1,17 +1,17 @@
-import { getBranch, checkBranch } from '@utils/git';
+import { getBranch, checkBranch, commit, add } from '@utils/git';
 import { Command } from './class';
 import type { ICommand } from '@/index';
-export const checkBranchHandler: ICommand =new Command(
+export const checkBranchHandler: ICommand = new Command(
   'git checkout ',
   'gc <branch>',
-  async(branchName?: string) => {
+  async (branchName?: string) => {
     if (branchName) {
-    try {
-      console.log(`切换到分支: ${branchName}`);
-      await checkBranch(branchName);
-    } catch (error) {
-      console.error('切换分支失败:', error);
-    }
+      try {
+        console.log(`切换到分支: ${branchName}`);
+        await checkBranch(branchName);
+      } catch (error) {
+        console.error('切换分支失败:', error);
+      }
       // 这里可以添加实际的切换分支逻辑
     } else {
       console.log('请提供分支名称');
@@ -28,5 +28,25 @@ export const getBranchHandler: ICommand = new Command(
         console.log(`${index + 1}. ${branch}`);
       });
     });
+  }
+)
+export const getAddHandler: ICommand = new Command(
+  'git add ',
+  'ga',
+  () => {
+    console.log('添加代码');
+    add();
+  }
+)
+export const getCommitHandler: ICommand = new Command(
+  'git commit ',
+  'gct <message>',
+  async (message?: string) => {
+    try {
+      console.log('提交代码:', message);
+      // await commit(message || '');
+    } catch (error) {
+      console.error('提交代码失败:', error);
+    }
   }
 )

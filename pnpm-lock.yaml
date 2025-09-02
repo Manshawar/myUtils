@@ -21,6 +21,9 @@ importers:
         specifier: ^5.9.2
         version: 5.9.2
     devDependencies:
+      '@types/module-alias':
+        specifier: ^2.0.4
+        version: 2.0.4
       '@types/node':
         specifier: ^24.3.0
         version: 24.3.0
@@ -331,6 +334,9 @@ packages:
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
+
+  '@types/module-alias@2.0.4':
+    resolution: {integrity: sha512-5+G/QXO/DvHZw60FjvbDzO4JmlD/nG5m2/vVGt25VN1eeP3w2bCoks1Wa7VuptMPM1TxJdx6RjO70N9Fw0nZPA==}
 
   '@types/node@24.3.0':
     resolution: {integrity: sha512-aPTXCrfwnDLj4VvXrm+UUCQjNEvJgNA8s5F1cvwQU+3KNltTOkBm1j30uNLyqqPNe7gE3KFzImYoZEfLhp4Yow==}
@@ -865,6 +871,8 @@ snapshots:
     optional: true
 
   '@types/estree@1.0.8': {}
+
+  '@types/module-alias@2.0.4': {}
 
   '@types/node@24.3.0':
     dependencies:
