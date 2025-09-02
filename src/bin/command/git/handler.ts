@@ -1,6 +1,7 @@
 import { getBranch, checkBranch, commit, add } from '@utils/git';
 import { Command } from './class';
 import type { ICommand } from '@/index';
+import { commitHead } from './common';
 export const checkBranchHandler: ICommand = new Command(
   'git checkout ',
   'gc <branch>',
@@ -44,7 +45,10 @@ export const getCommitHandler: ICommand = new Command(
   async (message?: string) => {
     try {
       console.log('提交代码:', message);
-      // await commit(message || '');
+      const res = message?.split(':');
+      console.log('res', commitHead[res?.[0] as string], res?.[1]);
+      const messageText = commitHead[res?.[0] as string] + res?.[1];
+      await commit(messageText || '');
     } catch (error) {
       console.error('提交代码失败:', error);
     }
