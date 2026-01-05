@@ -6,7 +6,7 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   dts: true,
-  format: 'esm',
+  format: ['cjs', 'esm'],
   outDir: 'lib/bin',
   external: ['simple-git']
 })

@@ -1,4 +1,4 @@
-import { simpleGit, CleanOptions } from 'simple-git';
+import { simpleGit } from 'simple-git';
 import type { SimpleGitOptions } from 'simple-git';
 const options: Partial<SimpleGitOptions> = {
   baseDir: process.cwd(),

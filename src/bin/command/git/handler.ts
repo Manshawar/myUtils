@@ -1,5 +1,5 @@
 import { getBranch, checkBranch, commit, add } from '@utils/git';
-import { Command } from './class';
+import { Command } from '../types';
 import type { ICommand } from '@/index';
 import { commitHead } from './common';
 export const checkBranchHandler: ICommand = new Command(
